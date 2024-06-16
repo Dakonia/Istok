@@ -1,15 +1,12 @@
-
 $(document).ready(function() {
     var modal = $('#loginModal');
     var loginFormContainer = $('#loginFormContainer');
     var registerFormContainer = $('#registerFormContainer');
-    var registerPrompt = $('#registerPrompt');
 
     $('#openLoginModalBtn').click(function() {
         loginFormContainer.show();
         registerFormContainer.hide();
-        registerPrompt.show();
-        modal.removeClass('register-open'); 
+        modal.removeClass('register-open');
         modal.show();
     });
 
@@ -23,19 +20,48 @@ $(document).ready(function() {
     $('#showRegisterForm').click(function() {
         loginFormContainer.hide();
         registerFormContainer.show();
-        registerPrompt.hide();
-        modal.addClass('register-open'); 
+        modal.addClass('register-open');
     });
 
     $('#showRegisterFormFromLogin').click(function() {
         loginFormContainer.hide();
         registerFormContainer.show();
-        modal.addClass('register-open'); 
+        modal.addClass('register-open');
     });
 
     $(window).click(function(event) {
         if ($(event.target).is(modal)) {
             modal.hide();
         }
+    });
+
+    $('#registerForm').submit(function(event) {
+        event.preventDefault(); // предотвращение стандартного поведения формы
+        var form = $(this);
+        var url = form.attr('action');
+        var data = form.serialize();
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            success: function(response) {
+                // Очищаем старые ошибки
+                form.find('.error').html('');
+                if (response.success) {
+                    // Закрываем модальное окно и показываем сообщение об успешной регистрации или редиректим
+                    modal.hide();
+                    alert('Регистрация прошла успешно!');
+                } else {
+                    // Показ ошибок
+                    for (var field in response.errors) {
+                        $('#error_' + field).html(response.errors[field].join('<br>'));
+                    }
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        });
     });
 });

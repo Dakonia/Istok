@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import *
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.exceptions import ValidationError
 
 
 
@@ -15,6 +16,18 @@ class UserRegistrationForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'email', 'phone_number', 'consent_to_data_processing', 'password']
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise ValidationError("Данный email уже зарегистрирован")
+        return email
+
+    def clean_phone_number(self):
+        phone_number = self.cleaned_data.get('phone_number')
+        if UserProfile.objects.filter(phone_number=phone_number).exists():
+            raise ValidationError("Данный номер телефона уже зарегистрирован")
+        return phone_number
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -30,6 +43,7 @@ class UserRegistrationForm(forms.ModelForm):
                 consent_to_data_processing=self.cleaned_data['consent_to_data_processing']
             )
         return user
+    
 #Не трогать это поля для лояльности 
 class UserProfileForm(forms.ModelForm):
     class Meta:

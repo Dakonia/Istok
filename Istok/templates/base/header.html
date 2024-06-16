@@ -82,8 +82,8 @@
                 </form>
             </div>
             <div class="login-regist">
-                <span class="close-login">&times;</span> 
-                <div class="login-regist-cont"> 
+                <span class="close-login">&times;</span>
+                <div class="login-regist-cont">
                     <div class="logint-reg-text">Еще не зарегистрированы?</div>
                     <div class="login-reg-but">
                         <button id="showRegisterFormFromLogin">Зарегистрироваться</button>
@@ -100,33 +100,41 @@
                     <div class="reg-group">
                         <label for="id_first_name">Ваше имя</label>
                         <input type="text" name="first_name" maxlength="25" required="" id="id_first_name">
+                        <div class="error" id="error_first_name"></div>
                     </div>
                     <div class="reg-group">
                         <label for="id_phone_number">Телефон</label>
                         <input type="text" name="phone_number" maxlength="15" required="" id="id_phone_number">
+                        <div class="error" id="error_phone_number"></div>
                     </div>
                     <div class="reg-group">
                         <label for="id_email">Адрес электронной почты</label>
                         <input type="email" name="email" required="" id="id_email">
+                        <div class="error" id="error_email"></div>
                     </div>
                     <div class="reg-group">
                         <label for="id_password">Пароль</label>
                         <input type="password" name="password" required="" id="id_password">
+                        <div class="error" id="error_password"></div>
                     </div>
                     <div class="reg-group-check">
                         <input type="checkbox" name="consent_to_data_processing" required="" id="id_consent_to_data_processing">
-                        <label for="id_consent_to_data_processing">Я даю согласие на обработку персональных данных.</br>
-                            С Политикой конфиденциальности 
-                            и Пользовательским соглашением ознакомлен(-а).
+                        <label for="id_consent_to_data_processing">Я даю согласие на обработку персональных данных.<br>
+                            С Политикой конфиденциальности и Пользовательским соглашением ознакомлен(-а).
                         </label>
+                        <div class="error" id="error_consent_to_data_processing"></div>
                     </div>
                     <div class="reg-but-form">
                         <button type="submit">Зарегистрироваться</button>
                     </div>
+                    <div class="error" id="error_non_field_errors"></div>
                 </form>
             </div>
         </div>
     </div>
+    
+    
+    
     
     <div class="content">
         {% block content %}

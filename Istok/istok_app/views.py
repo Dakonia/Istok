@@ -16,13 +16,14 @@ def register(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
-            user = user_form.save()
-            # login(request, user) 
-            return redirect('home')
+            user_form.save()
+            return JsonResponse({'success': True})
+        else:
+            errors = user_form.errors.as_json()
+            return JsonResponse({'success': False, 'errors': user_form.errors})
     else:
         user_form = UserRegistrationForm()
     return render(request, 'auth/register.html', {'user_form': user_form})
-
 
 def login(request):
     if request.method == 'POST':
@@ -30,9 +31,9 @@ def login(request):
         if user_form.is_valid():
             user = user_form.get_user()
             auth_login(request, user)
-            return HttpResponseRedirect('/') 
+            return JsonResponse({'success': True})
         else:
-            return JsonResponse({'errors': user_form.errors}, status=400)
+            return JsonResponse({'success': False, 'errors': user_form.errors})
     else:
         user_form = UserLoginForm()
     return render(request, 'auth/login.html', {'user_form': user_form})
