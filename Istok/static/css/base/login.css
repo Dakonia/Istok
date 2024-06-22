@@ -20,6 +20,99 @@
     left: 400px;
     top: 200px;
 }
+.modal-login{
+    display: none;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+    left: 1050px;
+    top: 120px;
+    border-radius: 15px;
+
+}
+.auth-login{
+    width: 218px;
+    height: 277px;
+    background-color: #FFFFFF;
+}
+.profile{
+    padding-top: 20px;
+    margin-left: 20px;
+}
+.profile-first-name a{
+    font-family: Mont;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+.profile-phone a{
+    font-family: Mont;
+    font-size: 14px;
+    text-decoration: none;
+    color: #9B9BA6;
+}
+.profile-phone{
+    margin-top: 5px;
+}
+.profile-auth{
+    margin-top: 5px;
+    margin-left: 25px;
+}
+.profile-info{
+    width: 202px;
+    height: 52px;
+    display: flex;
+    align-items:flex-start;
+}
+.img-prof img{
+    height: 50px;
+}
+.profile-menu{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.history-text{
+    font-size: 16px;
+    font-family: Mont-reg;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+hr{
+    margin-top: 30px;
+}
+.logout-prof{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout-prof img{
+    margin-right: 20px;
+}
+.logout-image-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.logout-image-button img {
+    display: block;
+}
+.logout-text button{
+    margin-left: 20px;
+    font-size: 16px;
+    font-family: Mont-reg;
+    color: #9B9BA6;
+    border: none;
+    background-color:#FFFFFF;
+    cursor: pointer;
+}
+.history-prof{
+    margin-top: 10px;
+    display: flex;
+}
 .modal.register-open {
     top: 120px; 
 }
@@ -186,6 +279,7 @@
     margin-top: 35px;
 }
 .reg-but-form button{
+    cursor: pointer;
     background-color: #6C8D7A;
     width: 314px;
     height: 43px;
@@ -215,4 +309,15 @@
 .form-login,
 .form-register {
     position: relative;
+}
+.error{
+    font-size: 16px;
+    font-family: Mont-reg;
+    color: #FFFFFF;
+}
+.error-login{
+    margin-left: 30px;
+    font-size: 16px;
+    font-family: Mont-reg;
+    color: #9B9BA6;
 }

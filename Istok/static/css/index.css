@@ -180,3 +180,218 @@
     height: 50px;
     font-size: 18px;
 }
+.container5{
+    margin-top: 36px;
+    margin-left: 26px;
+    margin-right: 26px;
+}
+.container5-text-top{
+    font-size: 42px;
+    font-family: Forum;
+    text-align: center;
+}
+.container5-block{
+    margin-top: 78px;
+    display: flex;
+    /* justify-content: space-around; */
+    width: 100%;
+    margin-left: 120px;
+}
+.block-left5{
+    margin-bottom: 236px;
+    margin-top: 20px;
+    margin-left: 150px;
+    text-align: right;
+}
+.block-left5i{
+    margin-bottom: 256px;
+    margin-top: 40px;
+    margin-left: 150px;
+    text-align: right;
+}
+.block-left5t{
+    margin-bottom: 0px;
+    margin-top: 40px;
+    margin-left: 150px;
+    text-align: right;
+}
+.block-right5{
+    margin-top: 190px;
+    margin-bottom: 240px;
+}
+.block-right5i{
+    margin-top: 190px;
+    margin-bottom: 270px;
+}
+.block-left5-title{
+    font-family: Mont;
+    font-size: 20px;
+}
+.block-left5-text{
+    font-family: Mont-reg;
+    font-size: 16px;
+}
+.container5-block-mid{
+    padding: 20px;
+}
+.container6{
+    margin-left: 26px;
+    margin-right: 26px;
+    margin-top: 36px;
+}
+.container6-text-top{
+    font-size: 42px;
+    font-family: Forum;
+    text-align: center;
+}
+.container6-block{
+    margin-top: 24px;
+    background-color: #F9F6F1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.block6-text{
+    margin-left: 134px;
+    font-size: 20px;
+    font-family: Mont-reg;
+    margin-top: 84px;
+}
+.block6-but{
+    margin-left: 134px;
+    margin-top: 24px;
+}
+.block6-but button{
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6C8D7A;
+    color: #FEFEFE;
+    font-size: 18px;
+    font-family: Mont;
+}
+.container7-block{
+    background-color: #6C8D7A;
+    border-radius: 10px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+}
+.block7-arrow{
+    margin: 40px;
+}
+.block7-text-top{
+    font-family: Mont;
+    font-size: 30px;
+    color: #FEFEFE;
+}
+.block7-text-mid1{
+    font-size: 20px;
+    font-family: Mont;
+    color: #FEFEFE;
+}
+.block7-text-mid2{
+    font-size: 40px;
+    font-family: Mont;
+    color: #FEFEFE;
+}
+.block7-desk{
+    display: grid;
+    gap: 20px;
+}
+.block7-but{
+    margin: 0;
+}
+.block7-but button{
+    background-color: #6C8D7A;
+    border: 1px solid #FEFEFE;
+    border-radius: 10px;
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    font-family: Mont;
+    color: #FEFEFE;
+}
+
+.container8-block{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #F9F6F1;
+    border-radius: 10px;
+    margin-top: 26px;
+}
+
+.block8-text-title{
+    font-size: 20px;
+    font-family: Mont;
+}
+.block8-text{
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: Mont-reg;
+}
+.block8-text2{
+    font-size: 20px;
+    font-family: Mont-reg;
+    margin-top: 20px;
+}
+.block8-right{
+    margin: 30px;
+}
+.block8-left{
+    margin-top: 30px;
+}
+.block8-but{
+    margin-top: 20px;
+}
+.block8-but button{
+    background-color: #6C8D7A;
+    border: 1px solid #FEFEFE;
+    border-radius: 10px;
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    font-family: Mont;
+    color: #FEFEFE;
+}
+
+.container9-block{
+    margin-top: 26px;
+    display: flex;
+    background-color: #F9F6F1;
+    width: 100%;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.block9-left{
+    margin: 30px;
+}
+.block9-right{
+    margin: 30px;
+}
+.block9-text-title{
+    font-size: 20px;
+    font-family: Mont;
+}
+.block9-text-title-tel{
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: Mont;
+}
+.block9-text-text{
+    font-size: 20px;
+    font-family: Mont-reg;
+}
+.block9-social{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+

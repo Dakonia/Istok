@@ -51,13 +51,29 @@ class UserProfileForm(forms.ModelForm):
         fields = [
             'phone_number', 'first_name', 'consent_to_data_processing',
             'last_name', 'surname', 'date_of_birth', 'email',
-             'has_children', 'renovation_plan',
-            'renovation_location', 'subscription_consent'
+            'has_children', 'renovation_plan',
+            'renovation_location', 'subscription_consent',
+            'gender','ren_planned',
+
         ]
         widgets = {
-            'renovation_location': forms.CheckboxSelectMultiple
+            'renovation_location': forms.CheckboxSelectMultiple,
+            'ren_planned': forms.RadioSelect(attrs={'class' :'form-check-input'}),
+            'gender': forms.RadioSelect(attrs={'class' :'form-check-input'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'surname': forms.TextInput(attrs={'class': 'form-control'}),
+            'date_of_birth': forms.DateInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'has_children': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'renovation_plan': forms.RadioSelect(attrs={'class': 'form-check-input'}),
+            'subscription_consent': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+            'consent_to_data_processing': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
+
+
 
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(max_length=254, label="Email или телефон")
-    password = forms.CharField(label="Пароль", widget=forms.PasswordInput)        
+    password = forms.CharField(label="Пароль", widget=forms.PasswordInput)

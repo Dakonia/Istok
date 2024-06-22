@@ -1,7 +1,6 @@
 {% extends 'base/header.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <div class="container">
@@ -167,15 +166,235 @@
             </div>
         </div>
     </div>
-
-
-
-    {% if user.is_authenticated %}
-    <div class="info_user">{{ user.username }}</div>
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Выход</button>
-    </form>
-    {% endif %}
+    <div class="container5">
+        <div class="container5-text-top">
+            Этапы работы 
+        </div>
+        <div class="container5-block">
+            <div class="container5-block-left">
+                <div class="block-left5">
+                    <div class="block-left5-title">
+                        <b>Онлайн консультация</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наш специалист свяжется с вами и поможет</br>
+                        сделать выбор, расскажет о нас</br>
+                        и материалах, запишет на встречу</br>
+                        с дизайнером.
+                    </div>
+                </div>
+                <div class="block-left5i">
+                    <div class="block-left5-title">
+                        <b>Технический замер</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наши специалисты приедут со</br>
+                        специализированным оборудованием,</br>
+                        замерят каждую деталь Вашего помещения.
+                    </div>
+                </div>
+                <div class="block-left5">
+                    <div class="block-left5-title">
+                        <b>Производство</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Современное производство с</br>
+                        промышленным оборудованием создаст для</br>
+                        вас мебель, соответствующую самым</br>
+                        высоким стандартам качества!
+                    </div>
+                </div>
+                <div class="block-left5">
+                    <div class="block-left5-title">
+                        <b>Обратная связь</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Специалист контроля качества позвонит Вам</br>
+                        после сборки и узнает, все ли Вам</br>
+                        понравилось!
+                    </div>
+                </div>
+            </div>
+            <div class="container5-block-mid">
+                <img src="{% static 'media/way.svg' %}" alt="way">
+            </div>
+            <div class="container5-block-right">
+                <div class="block-right5">
+                    <div class="block-left5-title">
+                        <b>Встреча с дизайнером</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наш дизайнер привезет с собой материалы,</br>
+                        покажет вам отличие одного от другого,</br>
+                        спроектирует стильный и эргономичный</br>
+                        проект, а также оформит ваш заказ.
+                    </div>
+                </div>
+                <div class="block-right5i">
+                    <div class="block-left5-title">
+                        <b>Конструирование</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наши конструктора создадут Вашу мебель с</br>
+                        нуля. Каждый модуль уникален!
+                    </div>
+                </div>
+                <div class="block-right5">
+                    <div class="block-left5-title">
+                        <b>Доставка и монтаж</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наш специалист свяжется с вами для</br>
+                        согласования даты доставки и монтажа, </br>
+                        либо вы сможете сделать это самостоятельно</br>
+                        через мобильное приложение.
+                    </div>
+                </div>
+                <div class="block-right5t">
+                    <div class="block-left5-title">
+                        <b>Поддержка 24/7</b>
+                    </div>
+                    <div class="block-left5-text">
+                        Наши специалисты готовы ответить на все</br>
+                        ваши вопросы и помочь решить любые</br>
+                        проблемы. Мы всегда на связи и будем рады</br>
+                        вам помочь!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container6">
+        <div class="container6-text-top">
+            Поставщики
+        </div>
+        <div class="container6-block">
+            <div class="block6-left">
+                <div class="block6-text">
+                Мы в ISTOK очень тщательно подбираем </br>
+                поставщиков для нашей продукции.</br>
+                Для нас важно, чтобы все товары </br>
+                соответствовали строгим критериям</br>
+                отбора, включая высокое качество</br>
+                и экологичность.
+                </div>
+                <div class="block6-but">
+                    <button>Комплектующие</button>
+                </div>
+            </div>
+            <div class="block6-right">
+                <img src="{% static 'media/postav.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="container6">
+        <div class="container6-text-top">
+            Акции
+        </div>
+        <div class="container7-block">
+            <div class="block7-arrow">
+                <img src="{% static 'media/chevron-left.svg' %}" alt="left">
+            </div>
+            <div class="block7-img">
+                <img src="{% static 'media/sale.png' %}" alt="sale"> 
+            </div>
+            <div class="block7-desk">
+                <div class="block7-text-top">
+                    Скидка
+                </div>
+                <div class="block7-text-mid1">
+                    10% на любой заказ
+                </div>
+                <div class="block7-text-mid2">
+                    +
+                </div>
+                <div class="block7-text-mid1">
+                    10 000 ₽ за рекомендацию 
+                </div>
+                <div class="block7-but">
+                    <button>Подробнее</button>
+                </div>
+            </div>
+            <div class="block7-arrow">
+                <img src="{% static 'media/chevron-right.svg' %}" alt="right">
+            </div>
+        </div>
+    </div>
+    <div class="container6">
+        <div class="container6-text-top">
+            Оставить заявку
+        </div>
+        <div class="container8-block">
+            <div class="block8-left">
+                <div class="block8-text-title">
+                    <b>У нас вы сами управляете своим</br> временем! </b>
+                </div>
+                <div class="block8-text">
+                    Выберите удобную дату </br>
+                    и время для связи с нашим</br>
+                    менеджером, который</br>
+                    проконсультирует вас по всем </br>
+                    интересующим вопросам. 
+                </div>
+                <div class="block8-text2">
+                    Ваше удобство - наш приоритет!
+                </div>
+                <div class="block8-but">
+                    <button>Записатся</button>
+                </div>
+            </div>
+            <div class="block8-right">
+                <img src="{% static 'media/cal.png' %}" alt="cal">
+            </div>
+        </div>
+    </div>
+    <div class="container6">
+        <div class="container6-text-top">
+            Наши контакты
+        </div>
+        <div class="container9-block">
+            <div class="block9-left">
+                <div style="position:relative;overflow:hidden;">
+                <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a>
+                <a href="https://yandex.ru/maps/2/saint-petersburg/?ll=30.375688%2C59.937371&mode
+                =whatshere&utm_medium=mapframe&utm_source=maps&whatshere%5Bpoint%5D=30.375299%2C59.
+                937322&whatshere%5Bzoom%5D=19.72&z=19.72" style="color:#eee;font-size:12px;
+                position:absolute;top:14px;">9-я Советская улица — Яндекс Карты</a>
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=30.375688%2C59.
+                937371&mode=whatshere&whatshere%5Bpoint%5D=30.375299%2C59.937322&whatshere%5Bzoom%5D=19.72&z=19.72" 
+                width="400" height="400"  frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+            <div class="block9-right">
+                <div class="block9-text-title">
+                    <b>Мы производим мебель на заказ</br>
+                    в Санкт-Петербурге и Ленинградской</br> 
+                    области</b>
+                </div>
+                <div class="block9-text-title-tel">
+                    <b>Телефон для связи:</b>
+                </div>
+                <div class="block9-text-text">
+                    8 (800) 222 00-62 </br>
+                    Звонок бесплатный 24/7
+                </div>
+                <div class="block9-text-title-tel">
+                    <b>Электронная почта:</b>
+                </div>
+                <div class="block9-text-text">
+                    connect@istok-mebel.ru
+                </div>
+                <div class="block9-text-title-tel">
+                    <b>Мессенджеры и социальные сети:</b>
+                </div>
+                <div class="block9-social">
+                    <img src="{% static 'media/tg-s.svg' %}" alt="tg">
+                    <img src="{% static 'media/vk-s.svg' %}" alt="vk">
+                    <img src="{% static 'media/ws.svg' %}" alt="ws">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'base/footer.html' %}
 {% endblock %}
 

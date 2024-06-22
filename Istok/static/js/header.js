@@ -64,4 +64,33 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#loginForm').submit(function(event) {
+        event.preventDefault(); // предотвращение стандартного поведения формы
+        var form = $(this);
+        var url = form.attr('action');
+        var data = form.serialize();
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: data,
+            success: function(response) {
+                // Очищаем старые ошибки
+                form.find('.error').html('');
+                if (response.success) {
+                    // Перенаправляем на главную страницу
+                    window.location.href = response.redirect_url;
+                } else {
+                    // Показ ошибок
+                    if (response.errors) {
+                        $('#error_non_field_errors').html('Введены неверные данные');
+                    }
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText);
+            }
+        });
+    });
 });
