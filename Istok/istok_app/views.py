@@ -84,4 +84,27 @@ def bonus_program(request, username):
     return render(request, 'profile/bonus_program.html', {'bonus_info': bonus_info})
 
 
+@login_required
+def chat_room(request, username):
+    user = request.user
+    manager = User.objects.filter(is_staff=True).first()
+    room, created = ChatRoom.objects.get_or_create(user=user, manager=manager)
+    if created:
+        room.name = username  
+        room.save()
+    messages = room.messages.order_by('timestamp')
+
+    context = {
+        'room_name': room.id, 
+        'messages': messages,
+    }
+    return render(request, 'chat/chat_room.html', context)
+
+@login_required
+def manager_chat(request):
+    if not request.user.is_staff:
+        return redirect('home')
+    rooms = ChatRoom.objects.filter(manager=request.user)
+    return render(request, 'chat/manager_chat.html', {'rooms': rooms})
+
 

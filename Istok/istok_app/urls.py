@@ -11,4 +11,6 @@ urlpatterns = [
     path('profile/<str:username>/order_history/', order_history, name='order_history'),
     path('profile/<str:username>/favorites/', favorites, name='favorites'),
     path('profile/<str:username>/bonus_program/', bonus_program, name='bonus_program'),
+    path('chat/<str:username>/', chat_room, name='chat_room'),
+    path('manager/chat/', manager_chat, name='manager_chat'),
 ]

@@ -34,10 +34,14 @@
     width: 218px;
     height: 277px;
     background-color: #FFFFFF;
+    border: 1px solid grey;
+    border-radius: 15px;
+    
 }
 .profile{
     padding-top: 20px;
     margin-left: 20px;
+    
 }
 .profile-first-name a{
     font-family: Mont;

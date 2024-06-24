@@ -42,3 +42,17 @@ class Favorite(models.Model):
 class BonusProgram(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bonus_points = models.DecimalField(max_digits=10, decimal_places=2)
+
+
+class ChatRoom(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chat_rooms')
+    manager = models.ForeignKey(User, on_delete=models.CASCADE, related_name='managed_chat_rooms')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    
+
+class ChatMessage(models.Model):
+    room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='messages')
+    sender = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)

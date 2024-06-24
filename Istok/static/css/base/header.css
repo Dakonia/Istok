@@ -10,6 +10,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #F9F6F1;
+    margin-bottom: 50px;
+    height: 90px;
 }
 .logo-head{
     height: 40px;
