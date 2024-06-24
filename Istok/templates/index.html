@@ -3,6 +3,7 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="{% static 'js/index.js' %}"></script> -->
     <div class="container">
         <div class="left-container">
         <div class="text-container">
@@ -396,10 +397,78 @@
         </div>
     </div>
     {% include 'base/footer.html' %}
-    {% if user.is_authenticated %}
-    <a href="{% url 'chat_room' username=request.user.username %}">Чат</a>
-    {% endif %}
+    <!-- <div>
+        {% if user.is_authenticated %}
+        <a href="#" id="openChatBtn">Чат</a>
+        {% endif %}
+    </div>
 
+    <div id="chatModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="chat-container"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const openChatBtn = document.getElementById('openChatBtn');
+    const modal = document.getElementById('chatModal');
+    const closeModal = document.getElementsByClassName('close')[0];
+    const chatContainer = document.getElementById('chat-container');
+
+    openChatBtn.onclick = function() {
+        const username = "{{ request.user.username }}"; // Используем Django-тег для получения username
+        fetch(`/chat/${username}/`)
+            .then(response => response.text())
+            .then(html => {
+                chatContainer.innerHTML = html;
+                modal.style.display = "block";
+                initChatWebSocket();
+            });
+    }
+
+    closeModal.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
+
+function initChatWebSocket() {
+    const roomName = "{{ room_name }}";
+    const chatSocket = new WebSocket(
+        'ws://' + window.location.host + '/ws/chat/' + roomName + '/');
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        document.querySelector('#chat-log').innerHTML += (data.message + '<br>');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // Enter key
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInputDom.value = '';
+    };
+}
+    </script> -->
 
 {% endblock %}
 

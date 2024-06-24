@@ -98,7 +98,11 @@ def chat_room(request, username):
         'room_name': room.id, 
         'messages': messages,
     }
-    return render(request, 'chat/chat_room.html', context)
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return render(request, 'chat/chat_room.html', context)
+    else:
+        return render(request, 'chat/chat_room.html', context)
 
 @login_required
 def manager_chat(request):
