@@ -31,6 +31,12 @@ header{
     padding-right: 67px;
 
 }
+.title-head a{
+    font-size: 18px;
+    color: black;
+    font-family: Mont-med;
+    text-decoration: none;
+}
 .title{
     margin-left: 35px;
 }

@@ -47,6 +47,7 @@ class BonusProgram(models.Model):
 class ChatRoom(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chat_rooms')
     manager = models.ForeignKey(User, on_delete=models.CASCADE, related_name='managed_chat_rooms')
+    name = models.CharField(max_length=255)  
     created_at = models.DateTimeField(auto_now_add=True)
 
     

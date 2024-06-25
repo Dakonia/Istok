@@ -13,4 +13,5 @@ urlpatterns = [
     path('profile/<str:username>/bonus_program/', bonus_program, name='bonus_program'),
     path('chat/<str:username>/', chat_room, name='chat_room'),
     path('manager/chat/', manager_chat, name='manager_chat'),
+    path('company/', company, name='company'),
 ]

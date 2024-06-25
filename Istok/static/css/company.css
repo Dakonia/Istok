@@ -1,0 +1,421 @@
+@font-face {
+    font-family: Forum;
+    src: url(../font/Forum-Regular.ttf);
+}
+@font-face {
+    font-family: Mont;
+    src: url(../font/Montserrat-Medium.ttf);
+}
+@font-face {
+    font-family: Mont-reg;
+    src: url(../font/Montserrat-Regular.ttf);
+}
+
+body{
+    margin: 0;
+}
+.container{
+    margin-left: 46px;
+    margin-right: 46px;
+}
+.block1{
+    position: relative;
+}
+.block-img img{
+    width: 100%;
+}
+.block1-block{
+    background-color: #F9F6F1;
+    width: 551px;
+    height: 254px;
+    z-index: 1;
+    position: absolute;
+    bottom: -100px;
+    border-radius: 10px;
+    left: 80px;
+}
+.text-title{
+    margin-top: 30px;
+    font-size: 40px;
+    font-family: Forum;
+    margin-left: 40px;
+}
+.hr-line{
+    width: 98px;
+    border: 0; 
+    border-top: 2px solid #14110D;
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.block-text{
+    margin-left: 40px;
+    font-size: 48px;
+    font-family: Forum;
+}
+
+/* 2 блок */
+.block2{
+    margin-top: 120px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.block2-text{
+    margin-top: 20px;
+}
+.block2-text1{
+    font-size: 16px;
+    font-family: Mont-reg;
+}
+.block2-text2{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.line-block2-1{
+    border: 0; 
+    border-top: 2px solid #14110D;
+    margin: 0;
+    margin-top: 25px;
+}
+.line-block2-2{
+    border: 0; 
+    border-top: 1px solid #14110D;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.text-2-title{
+    font-family: Mont-reg;
+    font-size: 24px;
+}
+.block2-text1{
+    font-size: 16px;
+    font-family: Mont-reg;
+}
+.block2-img{
+   align-items: center;
+   background-color: #F9F6F1;
+   width: 393px;
+   height: 564px;
+   border-radius: 10px;
+}
+.block2-img img{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.block2-text3{
+    font-size: 16px;
+    font-family: Mont-reg;
+}
+.text2-q img{
+    margin-bottom: 30px;
+}
+.text2-imp{
+    margin-left: 20px;
+}
+
+/* блок3 */
+.block3{
+    margin-top: 100px;
+}
+.block3-title{
+    font-size: 42px;
+    font-family: Forum;
+    text-align: center;
+}
+
+.block3-block2{
+    background-color: #F9F6F1;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    width: 780px;
+    height: 381px;
+    justify-content: space-around;
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    top: 250px;
+    left: 280px;
+
+}
+.line-block3{
+    border: 0; 
+    border-top: 1px solid #14110D;
+    width: 42px;
+    margin: 0;
+    margin-left: 130px;
+    margin-top: 30px;
+    
+}
+.block3-foto1 img{
+    width: 100%;
+}
+.block3-left-title{
+    text-align: center;
+    font-size: 26px;
+    font-family: Mont-reg;
+}
+.block3-left-cont{
+    margin-left: 20px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-family: Mont-reg;
+}
+.block3-block1{
+    position: relative;
+    margin-top: 50px;
+}
+.pers-name{
+    font-size: 16px;
+    font-family: Mont-reg;
+    text-align: center;
+}
+.block3-block3{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.hr-lines{
+    margin-top: 160px;
+}
+.line-presonal{
+    border: 0; 
+    border-top: 2px solid #14110D;
+    width: 731px;
+    margin: 0;
+    margin-left: 310px;
+}
+.line-pers{
+    width: 35px;
+    border: 0; 
+    border-top: 1px solid #14110D;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 79px;
+}
+
+/* блок 4 */
+.block4{
+    margin-top: 50px;
+}
+.block4-title{
+    text-align: center;
+    font-size: 42px;
+    font-family: Forum;
+}
+.block4-cont{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.block4-left{
+    display: grid;
+    gap: 30px;
+}
+.block4-mid{
+    display: grid;
+    gap: 30px;
+}
+.block4-right{
+    display: grid;
+    gap: 30px;
+}
+.text-block4{
+    background-color: #F9F6F1;
+    width: 292px;
+    height: 195px;
+    border-radius: 10px;
+}
+.text-block4-title{
+    font-size: 16px;
+    font-family: Mont;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.text-block4-text{
+    font-size: 16px;
+    font-family: Mont-reg;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+.block4-mid-text{
+    background-color: #F9F6F1;
+    border-radius: 10px;
+    width: 396px;
+    height: 230px;
+}
+.block4-mid-title{
+    font-size: 16px;
+    font-family: Mont;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.block4-mid-text1{
+    font-size: 16px;
+    font-family: Mont-reg;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+/* блок 5 */
+
+.block5{
+    margin-top: 50px;
+}
+.block5-title{
+    text-align: center;
+    font-size: 42px;
+    font-family: Forum;
+}
+.block5-title2{
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: Mont-reg;
+    text-align: center;
+}
+.title-line{
+    border: 0; 
+    border-top: 2px solid #14110D;
+    width: 551px;
+    margin: 0;
+    margin-left: 400px;
+    margin-top: 30px;
+}
+.block5-top1{
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+    margin-left: 40px;
+}
+.block5-top2{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.block5-cont{
+    width: 292px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: white;
+    
+}
+.block5-cont img{
+    margin-left: 90px;
+    margin-top: 20px;
+}
+.block5-conts{
+    margin-top: 40px;
+    display: grid;
+    background-color: #F9F6F1;
+    height: 783px;
+}
+.block5-cont-title{
+    font-size: 20px;
+    font-family: Mont;
+    color: #6C8D7A;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.block5-cont-text{
+    font-size: 16px;
+    font-family: Mont-reg;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.line-cont{
+    border: 0; 
+    border-top: 2px solid #14110D;
+    width: 50px;
+    margin: 0;
+    margin-top: 20px;
+}
+
+/* блок 6 */
+
+.block6{
+    margin-top: 30px;
+}
+.block6-title{
+    font-size: 42px;
+    font-family: Forum;
+    text-align: center;
+}
+.block6-cont img{
+    width: 100%;
+}
+.block6-cont{
+    margin-top: 50px;
+    position: relative;
+}
+.bl1{
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 100px;
+}
+.bl3{
+    position: absolute;
+    z-index: 1;
+    top: 400px;
+    left: 250px;
+}
+.bl4{
+    position: absolute;
+    z-index: 1;
+    top: 550px;
+    right: 50px;
+}
+.bl5{
+    position: absolute;
+    z-index: 1;
+    top: 700px;
+    left: 300px;
+    text-align: right;
+}
+.bl6{
+    position: absolute;
+    z-index: 1;
+    top: 870px;
+    right: 160px;
+}
+.bl7{
+    position: absolute;
+    z-index: 1;
+    top: 1050px;
+    left: 230px;
+}
+.bl8{
+    position: absolute;
+    z-index: 1;
+    right: 100px;
+    bottom: 200px;
+}
+.bl1-title{
+    font-size: 20px;
+    font-family: Mont;
+    color: white;
+}
+.bl1-text{
+    font-size: 16px;
+    font-family: Mont-reg;
+    color: white;
+}
+.bl2{
+    position: absolute;
+    z-index: 1;
+    top: 250px;
+    right:300px;
+}
+.vector{
+    position: absolute;
+    z-index: 1;
+    top: 220px;
+    left: 410px;
+}
