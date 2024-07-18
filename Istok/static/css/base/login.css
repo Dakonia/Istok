@@ -15,7 +15,7 @@
     display: none;
     position: fixed;
     overflow: auto;
-    z-index: 1;
+    z-index: 15;
     border-radius: 10px;
     left: 400px;
     top: 200px;
@@ -24,7 +24,7 @@
     display: none;
     position: fixed;
     overflow: auto;
-    z-index: 1;
+    z-index: 15;
     left: 1050px;
     top: 120px;
     border-radius: 15px;

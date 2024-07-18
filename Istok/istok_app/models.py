@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import datetime
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
@@ -30,6 +30,60 @@ class RenovationLocation(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Category(models.Model):
+    CATEGORY_CHOICES = [
+        ('bathroom', 'Ванная'),
+        ('wardrobe', 'Гардероб'),
+        ('racks', 'Стеллажи'),
+        ('hallways', 'Прихожие'),
+        ('kitchen', 'Кухни'),
+        ('dresser', 'Комоды'),
+        ('children', 'Детские'),
+    ]
+
+    name = models.CharField(max_length=100, verbose_name='Категории', choices=CATEGORY_CHOICES, default=None, null=True)
+    
+    def image_upload_to(instance, filename):
+        return f'images/{instance.name}/{filename}'
+    
+    image = models.ImageField(upload_to=image_upload_to)
+
+    def __str__(self):
+        return self.get_name_display()
+    
+
+
+class Product(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Название товара')
+    category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена')
+    sale_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Цена со скидкой', null=True, blank=True)
+    description = models.TextField(verbose_name='Описание')
+    
+    def main_image_upload_to(instance, filename):
+        return f'images/{instance.category.name}/{filename}'
+
+    main_image = models.ImageField(upload_to=main_image_upload_to, verbose_name='Главное изображение')
+    additional_images = models.ManyToManyField('ProductImage', related_name='products_with_additional_images', blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class ProductImage(models.Model):
+    def image_upload_to(instance, filename):
+        return f'images/{instance.product.category.name}/{filename}'
+
+    product = models.ForeignKey(Product, related_name='additional_images_set', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to=image_upload_to)
+
+    def __str__(self):
+        return f"Изображение для {self.product.name}"
+    
+
+
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -43,17 +97,3 @@ class BonusProgram(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bonus_points = models.DecimalField(max_digits=10, decimal_places=2)
 
-
-class ChatRoom(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chat_rooms')
-    manager = models.ForeignKey(User, on_delete=models.CASCADE, related_name='managed_chat_rooms')
-    name = models.CharField(max_length=255)  
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    
-
-class ChatMessage(models.Model):
-    room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='messages')
-    sender = models.ForeignKey(User, on_delete=models.CASCADE)
-    message = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)

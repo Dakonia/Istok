@@ -1,0 +1,42 @@
+{% extends 'base/header.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+<link rel="stylesheet" href="{% static 'css/base/header.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="text-top-cat">
+    <a href="{% url 'home' %}">Главная страница ></a>
+    {{ category.get_name_display }}
+</div>
+<div class="category-line">
+    {% for cat in categories %}
+        <a href="{% url 'category_detail' cat.name %}">
+            <div class="categ {% if cat == category %}selected{% endif %}">
+                <div class="cat-name">{{ cat.get_name_display }}</div>
+                <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
+            </div>
+        </a>
+    {% endfor %}
+    <div class="help-text">
+        <div class="texts">
+        Мы оказываем услуги по комплексной меблировке,
+         сочетая стиль, функциональность и премиальное качество.
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ product.main_image.url }}" alt="{{ product.name }}">
+                    <div class="product-name">{{ product.name }}</div>
+                    <div class="product-desk">{{ product.description }}</div>
+                    <div class="product-price"><b>от {{ product.price }} ₽</b></div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

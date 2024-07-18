@@ -54,48 +54,62 @@
         </div>
         <div class="container-block1">
             <div class="wardrobe">
+                <a href="{% url 'category_detail' 'wardrobe' %}">
                 <img src="{% static 'media/wardrobe.png' %}" alt="chests">
                 <div class="wardrobe-text">
                     Гардеробы
                 </div>
+                </a>
             </div>
             <div class="kitchen">
+                <a href="{% url 'category_detail' 'kitchen' %}">
                 <img src="{% static 'media/kitchen.png' %}" alt="kitchen">
                 <div class="kitchen-text">
                     Кухни
                 </div>
+                </a>
             </div>
             <div class="chests">
+                <a href="{% url 'category_detail' 'dresser' %}">
                 <img src="{% static 'media/chests.png' %}" alt="chests">
                 <div class="chests-text">
                     Комоды
                 </div>
+                </a>
             </div>
             <div class="rack">
+                <a href="{% url 'category_detail' 'racks' %}">
                 <img src="{% static 'media/rack.png' %}" alt="rack">
                 <div class="rack-text">
                     Стеллаж
                 </div>
+                </a>
             </div>
         </div>
         <div class="container-block2">
             <div class="bathroom">
+                <a href="{% url 'category_detail' 'bathroom' %}">
                 <img src="{% static 'media/bathroom.png' %}" alt="bathroom">
                 <div class="bathroom-text">
                     Ванные комнаты 
                 </div>
+                </a>
             </div>
             <div class="children">
+                <a href="{% url 'category_detail' 'children' %}">
                 <img src="{% static 'media/children.png' %}" alt="children">
                 <div class="children-text">
                     Детские
                 </div>
+                </a>
             </div>
             <div class="hallway">
+                <a href="{% url 'category_detail' 'hallways' %}">
                 <img src="{% static 'media/hallway.png' %}" alt="hallway">
                 <div class="hallway-text">
                     Прихожие
                 </div>
+                </a>
             </div>
         </div>
     </div>
@@ -427,9 +441,6 @@
     </div>
 
     <script src="{% static 'js/chat.js' %}"></script>
-    <!-- <div>
-        <a href="{% url 'chat_room' username=request.user.username %}">Чат</a>
-    </div> -->
 
 {% endblock %}
 

@@ -88,27 +88,23 @@ def bonus_program(request, username):
     return render(request, 'profile/bonus_program.html', {'bonus_info': bonus_info})
 
 
-@login_required
-def chat_room(request, username):
-    user = request.user
-    manager = User.objects.filter(is_staff=True).first()
-    room, created = ChatRoom.objects.get_or_create(user=user, manager=manager)
-    if created:
-        room.name = username  
-        room.save()
-    messages = room.messages.order_by('timestamp')
+def category_list(request):
+    categories = Category.objects.all()
+    return render(request, 'category/category_list.html', {'categories': categories})
 
-    context = {
-        'room_name': room.id, 
-        'messages': messages,
-    }
-    return render(request, 'chat/chat_room.html', context)
+def category_detail(request, category_name):
+    category = get_object_or_404(Category, name=category_name)
+    products = Product.objects.filter(category=category)
+    categories = Category.objects.all()
+    return render(request, 'category/category_detail.html', {
+        'category': category,
+        'products': products,
+        'categories': categories
+    })
 
-@login_required
-def manager_chat(request):
-    if not request.user.is_staff:
-        return redirect('home')
-    rooms = ChatRoom.objects.filter(manager=request.user)
-    return render(request, 'chat/manager_chat.html', {'rooms': rooms})
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'category/product_detail.html', {'product': product})
+
 
 

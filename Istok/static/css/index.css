@@ -108,6 +108,10 @@
     margin-right: 26px;
     margin-top: 36px;
 }
+.container3 a{
+    text-decoration: none;
+    color: black;
+}
 .cont-text3{
     text-align: center;
     font-size: 42px;
@@ -398,41 +402,6 @@
     gap: 20px;
 }
 
-
-/* Чат */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    bottom: 0;
-    width: 100%; 
-    height: 50%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
 /* Чат */
 .chat {
     display: none;
@@ -442,7 +411,7 @@
     border-radius: 10px;
     width: 377px;
     height: 450px;
-    z-index: 1000;
+    z-index: 10;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
